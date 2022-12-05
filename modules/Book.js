@@ -7,7 +7,7 @@ export class Book {
   }
 
   remove(thisBook) {
-    const booksArr = JSON.parse(localStorage.getItem('books'));
+    let booksArr = JSON.parse(localStorage.getItem('books'));
     const booksList = document.getElementById('books-list');
     const bookIndex = Array.from(booksList.children).indexOf(thisBook);
     booksArr = booksArr.filter((book) => book.id !== this.id);
@@ -25,7 +25,7 @@ export class Book {
   }
 
   addBookStorage() {
-    let booksArr = JSON.parse(localStorage.getItem('books'));
+    const booksArr = JSON.parse(localStorage.getItem('books'));
     booksArr.push({
       id: this.id,
       title: this.title,
