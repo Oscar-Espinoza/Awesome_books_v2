@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file, class-methods-use-this, import/prefer-default-export */
 export class Book {
   constructor(id, title, author) {
     this.id = id;
@@ -6,10 +7,10 @@ export class Book {
   }
 
   remove(thisBook) {
-    let booksArr = JSON.parse(localStorage.getItem('books'))
+    const booksArr = JSON.parse(localStorage.getItem('books'));
     const booksList = document.getElementById('books-list');
     const bookIndex = Array.from(booksList.children).indexOf(thisBook);
-    booksArr = booksArr.filter((book) => book !== booksArr[bookIndex]);
+    booksArr = booksArr.filter((book) => book.id !== this.id);
     localStorage.setItem('books', JSON.stringify(booksArr));
     booksList.removeChild(thisBook);
     if (bookIndex !== 0 && bookIndex < booksArr.length) {
@@ -24,14 +25,14 @@ export class Book {
   }
 
   addBookStorage() {
-    let booksArr = JSON.parse(localStorage.getItem('books'))
+    let booksArr = JSON.parse(localStorage.getItem('books'));
     booksArr.push({
       id: this.id,
       title: this.title,
       author: this.author,
     });
     localStorage.setItem('books', JSON.stringify(booksArr));
-    localStorage.setItem('lastId', this.id)
+    localStorage.setItem('lastId', this.id);
   }
 
   addBookToDom() {
@@ -55,4 +56,3 @@ export class Book {
     }
   }
 }
-
