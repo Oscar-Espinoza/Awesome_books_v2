@@ -1,5 +1,6 @@
+/* eslint-disable class-methods-use-this, import/prefer-default-export */
+import { Book } from './Book.js';
 
-import { Book } from './Book.js'
 export const createList = (booksArr) => {
   const initialBooks = [
     new Book(1, 'book1', 'author1'),
@@ -10,7 +11,7 @@ export const createList = (booksArr) => {
     booksArr = initialBooks;
     localStorage.setItem('books', JSON.stringify(booksArr));
   }
-  localStorage.setItem('lastId', booksArr[booksArr.length - 1].id)
+  localStorage.setItem('lastId', booksArr[booksArr.length - 1].id);
   booksArr.forEach((book) => {
     book = new Book(book.id, book.title, book.author);
     book.addBookToDom();
