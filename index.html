@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <h2 class="nav-title">Awesome Books</h2>
+      <ul class="links-list">
+        <li class="nav-link active">List</li>
+        <li class="nav-link middle-link">Add New</li>
+        <li class="nav-link">Contact</li>
+      </ul>
+    </nav>
+    <div class="date" id="current-date"></div>
+  </header>
+
+  <section class="container active" id="list">
+    <h1 class="list-title">All awesome books</h1>
+    <ul class="books-list" id="books-list">
+    </ul>
+  </section>
+
+  <section class="container" id="add new">
+    <form action="push" class="add-book-form">
+      <h2 class="form-title">Add a new book</h2>
+      <input type="text" placeholder="Title" name="title" id="title">
+      <input type="text" placeholder="Author" name="author" id="author">
+      <input type="button" value="Add book" id="add-book-btn">
+    </form>
+  </section>
+
+  <section class="container" id="contact">
+    <h2 class="contact-title">Contact information</h2>
+    <p class="contact-description">Do you have any questions or you just want to say "Hello"? <br> You can just reach out to us!</p>
+    <ul class="contact-forms">
+      <li class="contact-form">Our e-mail email@email.com</li>
+      <li class="contact-form">Our phone number: +1 123456789</li>
+      <li class="contact-form">Our address: Streetname 1234, 85, city, Country</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="copyright">Copyright ...</p>
+  </footer>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
